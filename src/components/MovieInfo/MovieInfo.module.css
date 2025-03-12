@@ -1,0 +1,62 @@
+.movieInfo {
+  padding: 32px 0;
+}
+
+.title {
+  margin-bottom: 40px;
+}
+
+.list,
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.itemLabel {
+  display: flex;
+  margin-bottom: 4px;
+}
+
+.itemKey {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.itemBorder {
+  display: none;
+}
+
+.itemValue {
+  font-size: 18px;
+  color: var(--white);
+}
+
+@media (min-width: 769px) {
+  .item {
+    flex-direction: row;
+  }
+
+  .itemLabel {
+    align-items: end;
+    width: 30%;
+    margin-bottom: 0;
+    margin-right: 8px;
+  }
+
+  .itemKey {
+    margin-right: 8px;
+    font-size: 18px;
+    color: var(--white);
+  }
+
+  .itemBorder {
+    display: block;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+    flex-grow: 1;
+    margin-bottom: 3px;
+  }
+}

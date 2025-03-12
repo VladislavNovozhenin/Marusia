@@ -1,0 +1,91 @@
+.header {
+  padding: 16px 0 14px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnToBack svg {
+  vertical-align: middle;
+}
+
+.nav {
+  display: none;
+}
+
+.navLink {
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn {
+  display: none;
+}
+
+.navLinkActive {
+  border-color: var(--pink);
+}
+
+.navLinkNotActive:hover {
+  color: var(--pink);
+}
+
+.navLinkAuth {
+  display: none;
+}
+
+/* .navLink:focus {
+  outline: none;
+  color: var(--pink);
+} */
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .logoLink img {
+    width: 143px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .logoLink {
+    margin-right: 20px;
+  }
+  .nav {
+    display: flex;
+  }
+
+  .navLink {
+    font-size: 24px;
+    line-height: 133%;
+    color: var(--white);
+  }
+
+  .navLink:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .btn {
+    margin-left: 20px;
+    display: block;
+    font-size: 24px;
+    line-height: 133%;
+    color: var(--white);
+    font-weight: 400;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .btn:hover {
+    color: var(--pink);
+  }
+
+  .btn:focus {
+    outline: none;
+    color: var(--pink);
+  }
+}

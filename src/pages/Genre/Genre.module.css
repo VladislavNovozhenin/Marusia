@@ -1,0 +1,78 @@
+.genre {
+  padding: 16px 0 40px;
+}
+
+.content {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.btnBack {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.btnBack svg {
+  display: block;
+}
+
+.btnBack path {
+  transition: fill 0.2s ease-in-out;
+}
+
+.btnBack:hover path {
+  fill: var(--pink);
+}
+
+.list {
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 24px;
+}
+
+.item {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 13px 5px rgba(255, 255, 255, 0.33);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.item:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 13px 5px rgba(255, 255, 255, 0.6);
+}
+
+.btnShow {
+  width: 335px;
+  border-radius: 28px;
+  padding: 16px 48px;
+  background-color: var(--blue2);
+  color: var(--white);
+}
+
+@media (min-width: 769px) {
+  .list {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+  }
+}
+
+@media (min-width: 993px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1201px) {
+  .list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

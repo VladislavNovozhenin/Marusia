@@ -1,0 +1,25 @@
+.list {
+  display: flex;
+}
+
+.item svg {
+  display: block;
+  cursor: pointer;
+}
+
+.item:not(:last-child) {
+  margin-right: 10px;
+}
+
+@media (min-width: 769px) {
+  .item svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .nav {
+    display: none;
+  }
+}

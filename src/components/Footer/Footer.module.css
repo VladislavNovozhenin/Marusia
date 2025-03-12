@@ -1,0 +1,65 @@
+.footer {
+  margin-top: auto;
+  padding: 24px 0;
+}
+
+.nav {
+  display: flex;
+}
+
+.list {
+  display: flex;
+}
+
+.item:not(:last-child) {
+  margin-right: 24px;
+}
+
+.item a {
+  color: transparent;
+}
+
+.item svg {
+  display: block;
+  fill: currentColor;
+}
+
+.item rect {
+  transition: stroke .2s ease-in-out;
+}
+
+.item path {
+  transition: fill .2s ease-in-out;
+}
+
+.item:hover rect {
+  stroke: var(--pink);
+}
+
+.item:hover path {
+  fill: var(--pink);
+}
+
+@media (min-width: 769px) {
+  .item svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .list {
+    margin-left: auto;
+  }
+
+  .item svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .footer {
+    padding: 40px 0;
+  }
+}

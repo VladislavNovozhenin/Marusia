@@ -1,0 +1,67 @@
+.container {
+  width: 100%;
+  max-width: 460px;
+  padding: 0 20px;
+}
+
+.content {
+  position: relative;
+  padding: 40px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 15px;
+}
+
+.title {
+  width: 132px;
+  margin-bottom: 25px;
+  margin-right: 8px;
+}
+
+.subtitle {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.descr {
+  margin: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.btnEnter {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px 25px;
+  width: 100%;
+}
+
+.btnClose {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.btnClose path {
+  transition: fill 0.2s ease-in-out;
+}
+
+.btnClose:hover path {
+  fill: var(--pink);
+}
+
+@media (min-width: 769px) {
+  .content {
+    padding: 60px 30px 50px;
+  }
+
+  .btnClose {
+    right: -60px;
+    top: 0;
+  }
+}

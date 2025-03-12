@@ -1,0 +1,75 @@
+.movieCardInfo {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.rating {
+  padding: 4px 12px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--yellow);
+}
+
+.ratingGreen {
+  background-color: var(--green);
+}
+
+.ratingRed {
+  background-color: var(--red);
+}
+
+.ratingGrey {
+  background-color: var(--grey5);
+}
+
+.rating svg {
+  margin-right: 4px;
+}
+
+.year,
+.genre,
+.duration {
+  font-size: 14px;
+  color: var(--grey4);
+}
+
+ .dropdownMovieCardInfo {
+    gap: 12px;
+  }
+  .dropdownYear,
+  .dropdownGenre,
+  .dropdownDuration {
+    font-size: 14px;
+  }
+  .dropdownRating {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+
+@media (min-width: 769px) {
+  .year,
+  .genre,
+  .duration {
+    font-size: 18px;
+  }
+
+  .dropdownYear,
+  .dropdownGenre,
+  .dropdownDuration {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .dropdownRating svg {
+    width: 12px;
+    height: 12px;
+  }
+}

@@ -1,0 +1,147 @@
+:root {
+  --white: #ffffff;
+  --green: #308e21;
+  --blue1: #67a5eb;
+  --blue2: #6a5dc2;
+  --blue3: #45526e;
+  --pink: #dc5dfc;
+  --grey1: #393b3c;
+  --grey2: #333;
+  --grey3: #747474;
+  --grey4: #ffffff80;
+  --grey5: #777;
+  --black: #000;
+  --yellow: #a59400;
+  --red: #c82020;
+}
+
+@font-face {
+  font-family: "Play";
+  src: local("Play-Bold"), local("Play Bold"),
+    url("./fonts/Play-Bold.woff2") format("woff2"),
+    url("./fonts/Play-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Play";
+  src: url("./fonts/Play-Regular.woff2") format("woff2"),
+    url("./fonts/Play-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 375px;
+  background: linear-gradient(180deg, #000 0%, rgba(39, 36, 36, 0.7) 100%),
+    linear-gradient(
+      180deg,
+      rgba(39, 135, 245, 0.9) 0%,
+      rgba(163, 147, 245, 0.9) 100%
+    );
+  padding: 0;
+  margin: 0;
+  font-family: "Play";
+  font-size: 24px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 133%;
+}
+
+.btnPrimary {
+  border-radius: 28px;
+  background-color: var(--grey1);
+  color: var(--white);
+  transition: all .2s ease-in-out;
+}
+
+.btnPrimary:hover {
+  background-color: var(--blue1);
+}
+
+.btnPrimary:focus {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: var(--blue3);
+  outline: none;
+}
+
+/* .btnSecondary {
+  border-radius: 28px;
+  background-color: var(--grey3);
+  color: var(--grey4);
+}
+
+.btnWhite {
+  border-radius: 28px;
+  background-color: var(--white);
+  color: var(--black);
+} */
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-weight: 700;
+  color: var(--white);
+  font-size: 24px;
+}
+
+.stop-scroll {
+  overflow-y: hidden;
+}
+
+@media (min-width: 481px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 769px) {
+  .container {
+    padding: 0 50px;
+  }
+  .sectionTitle {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .container {
+    padding: 0 80px;
+  }
+}
