@@ -1,5 +1,5 @@
-import { Movie } from "../../types";
-import styles from "./MovieInfo.module.css";
+import { Movie } from '../../types';
+import styles from './MovieInfo.module.css';
 
 interface IMovieInfo {
   movie: Movie;
@@ -17,7 +17,7 @@ const MovieInfo = ({ movie }: IMovieInfo) => {
               <span className={styles.itemBorder}></span>
             </div>
             <span className={styles.itemValue}>
-              {movie.language ? movie.language : "Нет данных"}
+              {movie.language ? movie.language : 'Нет данных'}
             </span>
           </li>
           <li className={styles.item}>
@@ -25,9 +25,7 @@ const MovieInfo = ({ movie }: IMovieInfo) => {
               <span className={styles.itemKey}>Бюджет</span>
               <span className={styles.itemBorder}></span>
             </div>
-            <span className={styles.itemValue}>
-              {movie.budget ? movie.budget : "Нет данных"}
-            </span>
+            <span className={styles.itemValue}>{movie.budget ? movie.budget : 'Нет данных'}</span>
           </li>
           <li className={styles.item}>
             <div className={styles.itemLabel}>
@@ -35,7 +33,7 @@ const MovieInfo = ({ movie }: IMovieInfo) => {
               <span className={styles.itemBorder}></span>
             </div>
             <span className={styles.itemValue}>
-              {movie.cast.length ? movie.cast : "Нет данных"}
+              {movie.cast.length ? movie.cast : 'Нет данных'}
             </span>
           </li>
           <li className={styles.item}>
@@ -44,7 +42,7 @@ const MovieInfo = ({ movie }: IMovieInfo) => {
               <span className={styles.itemBorder}></span>
             </div>
             <span className={styles.itemValue}>
-              {movie.director ? movie.director : "Нет данных"}
+              {movie.director ? movie.director : 'Нет данных'}
             </span>
           </li>
           <li className={styles.item}>
@@ -53,7 +51,7 @@ const MovieInfo = ({ movie }: IMovieInfo) => {
               <span className={styles.itemBorder}></span>
             </div>
             <span className={styles.itemValue}>
-              {movie.production ? movie.production : "Нет данных"}
+              {movie.production ? movie.production : 'Нет данных'}
             </span>
           </li>
           <li className={styles.item}>
@@ -62,7 +60,7 @@ const MovieInfo = ({ movie }: IMovieInfo) => {
               <span className={styles.itemBorder}></span>
             </div>
             <span className={styles.itemValue}>
-              {movie.awardsSummary ? movie.awardsSummary : "Нет данных"}
+              {movie.awardsSummary ? movie.awardsSummary : 'Нет данных'}
             </span>
           </li>
         </ul>

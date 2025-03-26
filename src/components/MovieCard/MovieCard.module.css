@@ -31,7 +31,6 @@
 .descr {
   margin: 0;
   margin-bottom: 32px;
-  font-size: 18px;
   font-weight: 400;
   color: var(--grey4);
   line-height: 133%;
@@ -78,6 +77,10 @@
 
 .btnLike {
   order: 2;
+}
+
+.btnLikeFav:hover {
+  background-color: var(--blue3);
 }
 
 .btnFilm {

@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^2.5.0",
+    "@eslint/eslintrc": "^3.3.1",
+    "@reduxjs/toolkit": "^2.6.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -18,6 +19,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
+    "react-responsive": "^10.0.1",
     "react-router-dom": "^7.0.2",
     "react-scripts": "5.0.1",
     "react-toastify": "^11.0.3",
@@ -32,7 +34,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
+    "format:check": "prettier --check 'src/**/*.{ts,tsx,css,scss,json,md}'",
+    "format": "prettier --write 'src/**/*.{ts,tsx,css,scss,json,md}'"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +59,20 @@
     ]
   },
   "devDependencies": {
-    "@types/webpack-env": "^1.18.5"
+    "@eslint/js": "^9.23.0",
+    "@types/webpack-env": "^1.18.5",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.2.4",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "function.prototype.name": "^1.1.8",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "typescript-eslint": "^8.27.0"
   }
 }

@@ -31,7 +31,8 @@
   grid-gap: 24px;
 }
 
-.item {
+.link {
+  display: block;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 0 13px 5px rgba(255, 255, 255, 0.33);
@@ -39,7 +40,8 @@
   transition: all 0.2s ease-in-out;
 }
 
-.item:hover {
+.link:hover,
+.link:active {
   transform: scale(1.01);
   box-shadow: 0 0 13px 5px rgba(255, 255, 255, 0.6);
 }
@@ -49,7 +51,6 @@
   border-radius: 28px;
   padding: 16px 48px;
   background-color: var(--blue2);
-  color: var(--white);
 }
 
 @media (min-width: 769px) {
@@ -74,5 +75,9 @@
 @media (min-width: 1201px) {
   .list {
     grid-template-columns: repeat(5, 1fr);
+  }
+
+  .content {
+    margin-bottom: 80px;
   }
 }

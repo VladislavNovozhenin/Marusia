@@ -11,9 +11,7 @@
   border-radius: 16px;
   display: flex;
   align-items: center;
-  font-size: 18px;
   font-weight: 700;
-  color: var(--white);
   background-color: var(--yellow);
 }
 
@@ -36,34 +34,34 @@
 .year,
 .genre,
 .duration {
-  font-size: 14px;
+  font-size: 0.777rem;
   color: var(--grey4);
 }
 
- .dropdownMovieCardInfo {
-    gap: 12px;
-  }
-  .dropdownYear,
-  .dropdownGenre,
-  .dropdownDuration {
-    font-size: 14px;
-  }
-  .dropdownRating {
-    padding: 3px 6px;
-    font-size: 10px;
-  }
+.dropdownMovieCardInfo {
+  gap: 12px;
+}
+.dropdownYear,
+.dropdownGenre,
+.dropdownDuration {
+  font-size: 0.777rem;
+}
+.dropdownRating {
+  padding: 3px 6px;
+  font-size: 0.555rem;
+}
 
 @media (min-width: 769px) {
   .year,
   .genre,
   .duration {
-    font-size: 18px;
+    font-size: 1rem;
   }
 
   .dropdownYear,
   .dropdownGenre,
   .dropdownDuration {
-    font-size: 14px;
+    font-size: 0.777rem;
   }
 }
 

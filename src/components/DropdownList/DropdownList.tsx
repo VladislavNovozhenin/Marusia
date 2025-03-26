@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
-import { SwiperSlide, Swiper } from "swiper/react";
-import { useAppSelector } from "../../store/hooks";
-import MovieCardInfo from "../MovieCardInfo/MovieCardInfo";
-import styles from "./DropdownList.module.css";
-import { useEffect, useRef } from "react";
+import { Link } from 'react-router-dom';
+import { SwiperSlide, Swiper } from 'swiper/react';
+import { useEffect, useRef } from 'react';
+import MovieCardInfo from '../MovieCardInfo/MovieCardInfo';
+import { useFetchAllMovieQuery } from '../../services/movieService';
+
+import styles from './DropdownList.module.css';
 
 interface IDropdownList {
   inputValue: string;
@@ -11,18 +12,14 @@ interface IDropdownList {
   setIsSearchVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const DropdownList = ({
-  inputValue,
-  setInputValue,
-  setIsSearchVisible,
-}: IDropdownList) => {
-  const movies = useAppSelector((state) => state.movies.movies);
-  const ref = useRef<HTMLDivElement>(null)
+const DropdownList = ({ inputValue, setInputValue, setIsSearchVisible }: IDropdownList) => {
+  const { data: movies } = useFetchAllMovieQuery();
+  const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside)
-    return () => document.removeEventListener('click', handleClickOutside)
-  }, [] )
-  const filterMovies = movies
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+  const filterMovies = (movies ?? [])
     .filter((movie) => {
       return movie.title.toLocaleLowerCase().includes(inputValue.toLowerCase());
     })
@@ -30,16 +27,19 @@ const DropdownList = ({
 
   const handleClose = () => {
     setIsSearchVisible(false);
-    setInputValue("");
+    setInputValue('');
   };
 
-   const handleClickOutside = (e: Event) => {
-    if (ref.current && !ref.current.contains(e.target as Node) && (e.target as HTMLInputElement).tagName !== "INPUT") {
+  const handleClickOutside = (e: Event) => {
+    if (
+      ref.current &&
+      !ref.current.contains(e.target as Node) &&
+      (e.target as HTMLInputElement).tagName !== 'INPUT'
+    ) {
       setIsSearchVisible(false);
-      setInputValue("");
+      setInputValue('');
     }
-     
-   };
+  };
 
   return (
     <div ref={ref} className={styles.container}>
@@ -59,48 +59,38 @@ const DropdownList = ({
               },
             }}
           >
-            {filterMovies.map((movie, index) => {
-              return (
-                <SwiperSlide key={index} className={styles.swiperSlide}>
-                  <Link className={styles.link} onClick={handleClose} to={`/movie/${movie.id}`}>
-                    <div className={styles.img}>
-                      <img src={movie.posterUrl} alt="Обложка" />
-                    </div>
-                    <div>
-                      <MovieCardInfo dropdown={true} movie={movie} />
-                      <p className={styles.descr}>{movie.title}</p>
-                    </div>
-                  </Link>
-                </SwiperSlide>
-              );
-            })}
+            {filterMovies.map((movie, index) => (
+              <SwiperSlide key={index} className={styles.swiperSlide}>
+                <Link className={styles.link} onClick={handleClose} to={`/movie/${movie.id}`}>
+                  <div className={styles.img}>
+                    <img src={movie.posterUrl} alt="Обложка" />
+                  </div>
+                  <div>
+                    <MovieCardInfo dropdown={true} movie={movie} />
+                    <p className={styles.descr}>{movie.title}</p>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            ))}
           </Swiper>
           <ul className={styles.list}>
-            {filterMovies.map((movie, index) => {
-              return (
-                <li key={index} className={styles.item}>
-                  <Link
-                    className={styles.link}
-                    onClick={handleClose}
-                    to={`/movie/${movie.id}`}
-                  >
-                    <div className={styles.img}>
-                      <img src={movie.posterUrl} alt="Обложка" />
-                    </div>
-                    <div>
-                      <MovieCardInfo dropdown={true} movie={movie} />
-                      <p className={styles.descr}>{movie.title}</p>
-                    </div>
-                  </Link>
-                </li>
-              );
-            })}
+            {filterMovies.map((movie, index) => (
+              <li key={index} className={styles.item}>
+                <Link className={styles.link} onClick={handleClose} to={`/movie/${movie.id}`}>
+                  <div className={styles.img}>
+                    <img src={movie.posterUrl} alt="Обложка" />
+                  </div>
+                  <div>
+                    <MovieCardInfo dropdown={true} movie={movie} />
+                    <p className={styles.descr}>{movie.title}</p>
+                  </div>
+                </Link>
+              </li>
+            ))}
           </ul>
         </>
       ) : (
-        <p className={styles.notFound}>
-          По вашему запросу ничего не найдено...{" "}
-        </p>
+        <p className={styles.notFound}>По вашему запросу ничего не найдено... </p>
       )}
     </div>
   );

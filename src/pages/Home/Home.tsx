@@ -1,27 +1,12 @@
-import { useEffect, useState } from "react";
-import MovieCard from "../../components/MovieCard/MovieCard";
-import { fetchRandom } from "../../request";
-import { Movie } from "../../types";
-import TopMovies from "../../components/TopMovies/TopMovies";
+import MovieCard from '../../components/MovieCard/MovieCard';
+import TopMovies from '../../components/TopMovies/TopMovies';
+import { useFetchRandomQuery } from '../../services/movieService';
 
 const Home = () => {
-  const [movieRandom, setMovieRandom] = useState<Movie | null>(null);
-
-  const fetchNewRandomMovie = () => {
-    fetchRandom().then((result) => setMovieRandom(result));
-  };
-
-  useEffect(() => {
-    fetchNewRandomMovie();
-  }, []);
+  const { data: movieRandom, refetch } = useFetchRandomQuery();
   return (
     <>
-      {movieRandom && (
-        <MovieCard
-          movie={movieRandom}
-          fetchNewRandomMovie={fetchNewRandomMovie}
-        />
-      )}
+      {movieRandom && <MovieCard movie={movieRandom} refetch={refetch} />}
       <TopMovies />
     </>
   );

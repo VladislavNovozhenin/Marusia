@@ -1,42 +1,47 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import HeaderGenres from "../../img/HeaderGenres";
-import HeaderProfile from "../../img/HeaderProfile";
-import HeaderSearch from "../../img/HeaderSearchIcon";
-import styles from "./HeaderIcons.module.css";
-import { useAppSelector } from "../../store/hooks";
+import { NavLink, useNavigate } from 'react-router-dom';
+import HeaderGenres from '../../assets/icons/HeaderGenres';
+import HeaderProfile from '../../assets/icons/HeaderProfile';
+import HeaderSearch from '../../assets/icons/HeaderSearchIcon';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { openModal } from '../../store/modalSlice';
+import styles from './HeaderIcons.module.css';
 
 interface IHeaderIcons {
   toggleSearch: () => void;
-  setIsOpenLogin: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const HeaderIcons = ({ toggleSearch, setIsOpenLogin }: IHeaderIcons) => {
+const HeaderIcons = ({ toggleSearch }: IHeaderIcons) => {
   const navigate = useNavigate();
   const user = useAppSelector((state) => state.user.user);
+  const dispatch = useAppDispatch();
   const handleLoginOrProfile = () => {
     if (user) {
-      navigate("/account");
+      navigate('/account');
     } else {
-      setIsOpenLogin(true);
+      dispatch(openModal('login'));
     }
   };
   return (
-    <nav className={styles.nav}>
-      <ul className={styles.list}>
-        <li className={styles.item}>
-          <NavLink to={"/genres"} className={styles.link}>
+    <nav className={styles.nav} role="navigation" aria-label="Меню">
+      <ul role="menu" className={styles.list}>
+        <li role="menuitem" className={styles.item}>
+          <NavLink to={'/genres'} className={styles.link} aria-label="Жанры">
             <HeaderGenres />
           </NavLink>
         </li>
-        <li onClick={toggleSearch} className={styles.item}>
-          <a className={styles.link}>
+        <li role="menuitem" className={styles.item}>
+          <button onClick={toggleSearch} className={styles.link} aria-label="Поиск">
             <HeaderSearch />
-          </a>
+          </button>
         </li>
-        <li onClick={handleLoginOrProfile} className={styles.item}>
-          <a className={styles.link}>
+        <li role="menuitem" className={styles.item}>
+          <button
+            onClick={handleLoginOrProfile}
+            className={styles.link}
+            aria-label={user ? 'Профиль' : 'Вход'}
+          >
             <HeaderProfile />
-          </a>
+          </button>
         </li>
       </ul>
     </nav>

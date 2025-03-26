@@ -14,7 +14,7 @@
   background-color: var(--grey1);
   cursor: pointer;
   outline: 2px solid transparent;
-  transition: outline-color .2s ease-in-out;
+  transition: outline-color 0.2s ease-in-out;
 }
 
 .containerFocus {
@@ -38,12 +38,12 @@
   background-color: transparent;
   flex-grow: 1;
   border: none;
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 133%;
   color: var(--white);
 }
 
-.input:focus {
+.input:focus-visible {
   outline: none;
 }
 

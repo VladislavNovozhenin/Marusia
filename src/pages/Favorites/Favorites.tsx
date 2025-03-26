@@ -1,7 +1,18 @@
-import styles from './Favorites.module.css'
+import MoviesCarousel from '../../components/MoviesCarousel/MoviesCarousel';
+import { useDeleteFavoriteMutation, useGetFavoriteQuery } from '../../services/favoriteService';
+import styles from './Favorites.module.css';
 
 const Favorites = () => {
-    return ( <section><h1>csscscscs</h1></section> );
-}
- 
+  const { data: favorites } = useGetFavoriteQuery();
+  const [fetchDelete] = useDeleteFavoriteMutation();
+  return (
+    <MoviesCarousel
+      className={styles.pb}
+      movies={favorites}
+      isDelete={true}
+      fetchDelete={fetchDelete}
+    />
+  );
+};
+
 export default Favorites;

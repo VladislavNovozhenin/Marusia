@@ -25,11 +25,11 @@
 }
 
 .item rect {
-  transition: stroke .2s ease-in-out;
+  transition: stroke 0.2s ease-in-out;
 }
 
 .item path {
-  transition: fill .2s ease-in-out;
+  transition: fill 0.2s ease-in-out;
 }
 
 .item:hover rect {

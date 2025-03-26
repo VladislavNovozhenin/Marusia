@@ -1,18 +1,13 @@
-import OnClose from "../../img/OnClose";
-import Modal from "../Modal/Modal";
-import styles from "./SuccessModal.module.css";
-import logo from "../../img/modalLogo.png";
+import OnClose from '../../assets/icons/OnClose';
+import Modal from '../Modal/Modal';
+import logo from '../../assets/img/modalLogo.png';
+import { useAppDispatch } from '../../store/hooks';
+import { closeModal, openModal } from '../../store/modalSlice';
+import styles from './SuccessModal.module.css';
 
-interface ISuccessModal {
-  setIsOpenLogin: React.Dispatch<React.SetStateAction<boolean>>;
-  setIsOpenSuccess: React.Dispatch<React.SetStateAction<boolean>>;
-}
+const SuccessModal = () => {
+  const dispatch = useAppDispatch();
 
-const SuccessModal = ({ setIsOpenLogin, setIsOpenSuccess }: ISuccessModal) => {
-  const handleLogin = () => {
-    setIsOpenLogin(true);
-    setIsOpenSuccess(false);
-  };
   return (
     <Modal>
       <div className={styles.container}>
@@ -21,13 +16,18 @@ const SuccessModal = ({ setIsOpenLogin, setIsOpenSuccess }: ISuccessModal) => {
             <img src={logo} alt="" />
           </div>
           <h2 className={styles.subtitle}>Регистрация завершена</h2>
-          <p className={styles.descr}>
-            Используйте вашу электронную почту для входа
-          </p>
-          <button onClick={handleLogin} className={`${styles.btnEnter} btnPrimary`}>Войти</button>
+          <p className={styles.descr}>Используйте вашу электронную почту для входа</p>
           <button
-            onClick={() => setIsOpenSuccess(false)}
-            className={styles.btnClose}
+            aria-label="Перейти на форму входа"
+            onClick={() => dispatch(openModal('login'))}
+            className={`${styles.btnEnter} button btnSecondary`}
+          >
+            Войти
+          </button>
+          <button
+            aria-label="Закрыть форму"
+            onClick={() => dispatch(closeModal())}
+            className={`${styles.btnClose} button`}
           >
             <OnClose />
           </button>

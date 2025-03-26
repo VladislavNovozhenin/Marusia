@@ -1,8 +1,8 @@
-import { useState } from "react";
-import HeaderSearchCancel from "../../img/HeaderSearchCancel";
-import styles from "./HeaderSearch.module.css";
-import HeaderSearchIcon from "../../img/HeaderSearchIcon";
-import DropdownList from "../DropdownList/DropdownList";
+import { useState } from 'react';
+import HeaderSearchCancel from '../../assets/icons/HeaderSearchCancel';
+import HeaderSearchIcon from '../../assets/icons/HeaderSearchIcon';
+import DropdownList from '../DropdownList/DropdownList';
+import styles from './HeaderSearch.module.css';
 
 interface IHeaderSearch {
   isSearchVisible: boolean;
@@ -10,21 +10,23 @@ interface IHeaderSearch {
 }
 
 const HeaderSearch = ({ isSearchVisible, setIsSearchVisible }: IHeaderSearch) => {
-  const [inputValue, setInputValue] = useState("");
-  const [isFocus, setIsFocus] = useState(false)
+  const [inputValue, setInputValue] = useState('');
+  const [isFocus, setIsFocus] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 
   const clearInput = () => {
-    setInputValue("");
+    setInputValue('');
   };
   return (
-    <div
-      className={`${styles.headerSearch} ${isSearchVisible ? styles.flex : ""}`}
-    >
-      <div className={`${styles.container} ${isFocus ? styles.containerFocus : ''}`}>
+    <div className={`${styles.headerSearch} ${isSearchVisible ? styles.flex : ''}`}>
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        role="search"
+        className={`${styles.container} ${isFocus ? styles.containerFocus : ''}`}
+      >
         <div className={styles.icon}>
           <HeaderSearchIcon />
         </div>
@@ -36,13 +38,19 @@ const HeaderSearch = ({ isSearchVisible, setIsSearchVisible }: IHeaderSearch) =>
           placeholder="поиск"
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
+          aria-label="Поиск"
         />
         {inputValue && (
-          <button onClick={clearInput} className={styles.btnCancel}>
+          <button
+            type="button"
+            onClick={clearInput}
+            className={`${styles.btnCancel} button`}
+            aria-label="Очистить поиск"
+          >
             <HeaderSearchCancel />
           </button>
         )}
-      </div>
+      </form>
       {inputValue && (
         <DropdownList
           inputValue={inputValue}

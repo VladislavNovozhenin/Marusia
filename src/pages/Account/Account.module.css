@@ -1,32 +1,59 @@
 .account {
-padding-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .title {
-margin-bottom: 55px;
+  margin-bottom: 40px;
 }
 
 .linkGroup {
-display: flex;
-align-items: center;
-}
-
-.linkGroup svg {
-margin-right: 3px;
+  display: flex;
+  align-items: center;
 }
 
 .link {
-display: flex;
-align-items: end;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: end;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  color: inherit;
+}
+
+.linkActive {
+  border-color: var(--pink);
 }
 
 .link:not(:last-child) {
-margin-right: 20px;
+  margin-right: 20px;
 }
 
+.link svg {
+  margin-right: 3px;
+}
+
+.link svg path {
+  transition: fill 0.2s ease-in-out;
+}
 
 .btnName {
-font-size: 24px;
-font-weight: normal;
-color: var(--white);
+  font-size: 1.333rem;
+  font-weight: normal;
+  transition: all 0.2s ease-in-out;
+}
+
+.linkNotActive:hover .btnName {
+  color: var(--pink);
+}
+
+.linkNotActive:hover svg path {
+  fill: var(--pink);
+}
+
+@media (min-width: 1025px) {
+  .account {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
 }

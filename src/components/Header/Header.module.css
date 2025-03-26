@@ -19,6 +19,7 @@
 .navLink {
   border-bottom: 1px solid transparent;
   transition: all 0.2s ease-in-out;
+  color: inherit;
 }
 
 .btn {
@@ -29,18 +30,14 @@
   border-color: var(--pink);
 }
 
-.navLinkNotActive:hover {
+.navLinkNotActive:hover,
+.navLinkNotActive:active {
   color: var(--pink);
 }
 
 .navLinkAuth {
   display: none;
 }
-
-/* .navLink:focus {
-  outline: none;
-  color: var(--pink);
-} */
 
 .hidden {
   display: none;
@@ -61,31 +58,28 @@
   }
 
   .navLink {
-    font-size: 24px;
+    font-size: 1.333rem;
     line-height: 133%;
-    color: var(--white);
   }
 
   .navLink:not(:last-child) {
     margin-right: 20px;
   }
 
+  .navLinkAuth {
+    display: block;
+  }
+
   .btn {
     margin-left: 20px;
     display: block;
-    font-size: 24px;
+    font-size: 1.333rem;
     line-height: 133%;
-    color: var(--white);
-    font-weight: 400;
     transition: color 0.2s ease-in-out;
   }
 
-  .btn:hover {
-    color: var(--pink);
-  }
-
-  .btn:focus {
-    outline: none;
+  .btn:hover,
+  .btn:active {
     color: var(--pink);
   }
 }

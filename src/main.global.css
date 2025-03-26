@@ -10,24 +10,28 @@
   --grey3: #747474;
   --grey4: #ffffff80;
   --grey5: #777;
+  --grey6: #ffffff50;
   --black: #000;
   --yellow: #a59400;
   --red: #c82020;
 }
 
 @font-face {
-  font-family: "Play";
-  src: local("Play-Bold"), local("Play Bold"),
-    url("./fonts/Play-Bold.woff2") format("woff2"),
-    url("./fonts/Play-Bold.woff") format("woff");
+  font-family: 'Play';
+  src:
+    local('Play-Bold'),
+    local('Play Bold'),
+    url('./assets/fonts/Play-Bold.woff2') format('woff2'),
+    url('./assets/fonts/Play-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Play";
-  src: url("./fonts/Play-Regular.woff2") format("woff2"),
-    url("./fonts/Play-Regular.woff") format("woff");
+  font-family: 'Play';
+  src:
+    url('./assets/fonts/Play-Regular.woff2') format('woff2'),
+    url('./assets/fonts/Play-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -39,18 +43,20 @@ html,
   box-sizing: border-box;
 }
 
+html {
+  font-size: 18px;
+}
+
 body {
   min-width: 375px;
-  background: linear-gradient(180deg, #000 0%, rgba(39, 36, 36, 0.7) 100%),
-    linear-gradient(
-      180deg,
-      rgba(39, 135, 245, 0.9) 0%,
-      rgba(163, 147, 245, 0.9) 100%
-    );
+  font-size: 1rem;
+  background:
+    linear-gradient(180deg, #000 0%, rgba(39, 36, 36, 0.7) 100%),
+    linear-gradient(180deg, rgba(39, 135, 245, 0.9) 0%, rgba(163, 147, 245, 0.9) 100%);
   padding: 0;
   margin: 0;
-  font-family: "Play";
-  font-size: 24px;
+  font-family: 'Play';
+  color: var(--white);
 }
 
 .container {
@@ -74,39 +80,36 @@ button {
   border: none;
   background: transparent;
   cursor: pointer;
+  color: var(--white);
+}
+
+.button {
+  border-radius: 28px;
   font-weight: 700;
   font-size: 18px;
   line-height: 133%;
+  transition: all 0.2s ease-in-out;
 }
 
 .btnPrimary {
-  border-radius: 28px;
   background-color: var(--grey1);
   color: var(--white);
-  transition: all .2s ease-in-out;
 }
 
-.btnPrimary:hover {
+.btnPrimary:hover,
+.btnPrimary:active {
   background-color: var(--blue1);
 }
 
-.btnPrimary:focus {
-  color: rgba(255, 255, 255, 0.5);
+.btnSecondary {
+  background-color: var(--blue1);
+  color: var(--white);
+}
+
+.btnSecondary:hover,
+.btnSecondary:active {
   background-color: var(--blue3);
-  outline: none;
 }
-
-/* .btnSecondary {
-  border-radius: 28px;
-  background-color: var(--grey3);
-  color: var(--grey4);
-}
-
-.btnWhite {
-  border-radius: 28px;
-  background-color: var(--white);
-  color: var(--black);
-} */
 
 img {
   width: 100%;
@@ -118,7 +121,7 @@ img {
   margin: 0;
   font-weight: 700;
   color: var(--white);
-  font-size: 24px;
+  font-size: 1.333rem;
 }
 
 .stop-scroll {
@@ -136,12 +139,22 @@ img {
     padding: 0 50px;
   }
   .sectionTitle {
-    font-size: 28px;
+    font-size: 1.555rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sectionTitle {
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 1201px) {
   .container {
     padding: 0 80px;
+  }
+
+  .sectionTitle {
+    font-size: 2.666rem;
   }
 }

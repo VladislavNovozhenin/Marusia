@@ -22,17 +22,12 @@
 }
 
 .itemKey {
-  font-size: 14px;
+  font-size: 0.777rem;
   color: rgba(255, 255, 255, 0.5);
 }
 
 .itemBorder {
   display: none;
-}
-
-.itemValue {
-  font-size: 18px;
-  color: var(--white);
 }
 
 @media (min-width: 769px) {
@@ -49,8 +44,7 @@
 
   .itemKey {
     margin-right: 8px;
-    font-size: 18px;
-    color: var(--white);
+    font-size: 1rem;
   }
 
   .itemBorder {

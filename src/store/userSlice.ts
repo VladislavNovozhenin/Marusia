@@ -1,37 +1,25 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { User } from '../types';
 
-export type User = {
-    name: string
-    surname: string
-    email: string
-    favorites: number[]
-}
-
-type UserState = {
-    user: User | null
+interface UserState {
+  user: User | null;
 }
 
 const initialState: UserState = {
-    user: null
-}
+  user: null,
+};
 
 export const userSlice = createSlice({
-    name: 'user',
-    initialState,
-    reducers: {
-        login: (state, action: PayloadAction<User>) => {
-            state.user = action.payload
-        },
-        logout: (state) => {
-            state.user = null
-        }, 
-        updateFavorites: (state, action: PayloadAction<number[]>) => {
-            if (state.user) {
-                state.user.favorites = action.payload
-            }
-            
-        }
-    }
-})
+  name: 'user',
+  initialState,
+  reducers: {
+    login: (state, action: PayloadAction<User>) => {
+      state.user = action.payload;
+    },
+    logout: (state) => {
+      state.user = null;
+    },
+  },
+});
 
-export const { login, logout, updateFavorites } = userSlice.actions
+export const { login, logout } = userSlice.actions;

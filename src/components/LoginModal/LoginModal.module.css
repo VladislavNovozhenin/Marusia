@@ -77,14 +77,14 @@
 
 .input {
   width: 100%;
-  font-family: "Play";
+  font-family: 'Play';
   color: var(--grey3);
   padding-top: 3px;
   border: none;
   outline: none;
 }
 
-.input:focus {
+.input:focus-visible {
   color: var(--black);
 }
 
@@ -110,6 +110,7 @@
 }
 
 .btnReg {
+  color: var(--black);
   transition: color 0.2s ease-in-out;
 }
 

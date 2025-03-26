@@ -23,15 +23,17 @@
 .subtitle {
   margin: 0;
   margin-bottom: 15px;
-  font-size: 24px;
+  font-size: 1.333rem;
   font-weight: bold;
+  color: var(--black);
 }
 
 .descr {
   margin: 0;
   margin-bottom: 10px;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.111rem;
+  color: var(--black);
 }
 
 .btnEnter {
