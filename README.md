@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+VK Marusia Streaming Service (Beta Version)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📌 Описание проекта
 
-## Available Scripts
+Благодаря IT-компании VK вы сможете почувствовать себя настоящими разработчиками в большой корпорации. Данный проект представляет собой бета-версию популярного стримингового сервиса от ВК Маруси, созданную на основе предоставленных макетов.
 
-In the project directory, you can run:
+Пользователи приложения могут искать фильмы, просматривать категории, смотреть трейлеры и добавлять фильмы в избранное. Интерфейс ориентирован на удобство и быстроту поиска контента.
 
-### `npm start`
+🎬 Функциональность
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+🔹 Главная страница
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Удобный дашборд с рекомендациями фильмов.
 
-### `npm test`
+Возможность выбрать случайный фильм.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Список топовых фильмов по IMDb-рейтингу.
 
-### `npm run build`
+🔹 Категории фильмов
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Страница со списком существующих киножанров.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Возможность выбрать жанр и просмотреть список фильмов, которые к нему относятся.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🔹 Страница фильма
 
-### `npm run eject`
+Детальное описание фильма.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Кнопка просмотра трейлера.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Возможность добавить в избранное или удалить из списка избранных.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+🔹 Авторизация и избранное
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Авторизованные пользователи могут добавлять фильмы в избранное.
 
-## Learn More
+Попытка добавить фильм без авторизации вызывает форму входа.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+После авторизации доступна страница аккаунта со списком избранных фильмов и личной информацией.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🔹 Поиск
+
+Поиск фильма по названию.
+
+Доступен через поле поиска в разделе навигации.
+
