@@ -18,7 +18,7 @@ import styles from './App.module.css';
 function App() {
   const dispatch = useAppDispatch();
   const [fetchProfile] = useLazyProfileQuery();
-
+  
   const getProfile = async () => {
     if (localStorage.getItem('auth')) {
       const user = await fetchProfile();
